@@ -1,0 +1,154 @@
+Current Bugs:
+
+#1 seated : bool # |
+    no_show : bool# |------> only 1 can be true at one time 
+    finished : bool#|------>but how do i do that ?
+
+
+Bug 1 (Biggest)
+
+waitlist_log() returns one dictionary:
+
+{
+    "Name": customer_name,
+    "Phone Number": phone_number,
+    ...
+}
+
+Then you do
+
+for entry in log:
+
+But log is not a list.
+
+It is a dictionary.
+
+Looping over a dictionary gives its keys.
+
+So entry becomes
+
+"Name"
+
+then
+
+"Phone Number"
+
+then
+
+"Party Size"
+
+...
+
+NOT the customer.
+
+Bug 2
+
+Because of Bug 1,
+
+this immediately breaks:
+
+entry["Name"]
+
+Why?
+
+Because
+
+entry == "Name"
+
+which means Python tries
+
+"Name"["Name"]
+
+which is impossible.
+
+Bug 3
+
+This line has invalid quotes.
+
+logging.info(f"Adding wait number {waitlist_number} for {entry["Name"]}")
+
+Python sees
+
+"
+
+inside another
+
+"
+
+and thinks the string ended.
+
+Use single quotes inside:
+
+entry['Name']
+
+or vice versa.
+
+Bug 4
+
+This
+
+return waitlist_table
+
+is inside the loop.
+
+Meaning
+
+Customer 1
+↓
+append
+↓
+return
+
+Loop ends immediately.
+
+It never processes a second customer.
+
+Bug 5 (Architecture)
+
+Every request creates
+
+waitlist_table = []
+
+So next request
+
+Farhan
+↓
+[]
+↓
+append
+↓
+return
+
+Second request
+
+John
+↓
+[]
+↓
+append
+↓
+return
+
+Farhan disappeared.
+
+Nothing survives.
+
+Bug 6
+
+You're passing
+
+logging = waitlist_log(...)
+
+This variable is not logging.
+
+It's actually
+
+waitlist = {
+...
+}
+
+Calling it logging is confusing because you already imported the logging module.
+
+Call it something like
+
+waitlist_entry

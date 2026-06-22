@@ -1,0 +1,17 @@
+2026-06-19 01:48:45,178 - INFO - Data received for waitlist update: customer_name='Farhan' phone_number=9606171365 party_size=2 customer_visits=0
+2026-06-19 01:49:48,046 - INFO - Data received for waitlist update: customer_name='Farhan' phone_number=9606171365 party_size=2 customer_visits=0
+2026-06-20 02:18:10,631 - INFO - Adding Farhan to the waitlist
+2026-06-20 02:18:10,632 - INFO - Farhan has been added
+2026-06-20 02:52:58,374 - INFO - Adding Farhan to the waitlist
+2026-06-20 02:52:58,374 - INFO - Farhan has been added
+2026-06-20 02:52:58,374 - INFO - Generating overall waitlist...
+2026-06-21 02:29:26,197 - INFO - Adding Farhan to the waitlist
+2026-06-21 02:29:26,197 - INFO - Farhan has been added
+2026-06-21 02:29:49,187 - INFO - Adding Aisha to the waitlist
+2026-06-21 02:29:49,187 - INFO - Aisha has been added
+2026-06-21 02:30:14,106 - INFO - Adding Aziz to the waitlist
+2026-06-21 02:30:14,106 - INFO - Aziz has been added
+2026-06-21 11:03:42,334 - INFO - Adding Farhan to the waitlist
+2026-06-21 11:03:42,335 - INFO - Farhan has been added
+2026-06-21 11:04:00,559 - INFO - Adding Aisha to the waitlist
+2026-06-21 11:04:00,559 - INFO - Aisha has been added
